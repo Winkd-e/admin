@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Optifood Login Form</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script type="module" src="firebaseauth.js"></script>
+    </head>
+<body>
+
+    <!-- Main container -->
+    <div class="container">
+        <!-- Walkthrough Section -->
+        <div class="walkthrough">
+            <div class="slides">
+                <div class="slide">
+                    <img src="slide1.jpg" alt="Manage your home stock and track your food with ease!">
+                    <h3>Manage Your Stock</h3>
+                    <p>Track your food with ease!</p>
+                </div>
+                <div class="slide">
+                    <img src="slide2.png" alt="Plan Your Meals and Save Time!">
+                    <h3>Plan Your Meals</h3>
+                    <p>Save time and stay organized!</p>
+                </div>
+                <div class="slide">
+                    <img src="slide3.png" alt="Keep Your Grocery List Organized and Up-to-Date!">
+                    <h3>Organize Your Grocery List</h3>
+                    <p>Stay up-to-date with your groceries!</p>
+                </div>
+            </div>
+            <button class="prev" onclick="moveSlide(-1)">❮</button>
+            <button class="next" onclick="moveSlide(1)">❯</button>
+        </div>
+
+        <!-- Login Section -->
+        <div class="forms-container">
+            <div class="login">
+                <form action="#" id="loginform">
+                    <h2 class="title">Sign in</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="email" placeholder="Username" required>
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" placeholder="Password" required>
+                    </div>
+                    <div>
+                        <input type="submit" name="loginbtn" value="Login">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+    
+    
+
+</body>
+</html>
+ 
