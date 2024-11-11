@@ -1,7 +1,6 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -17,16 +16,31 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-//inputs for email and pass
-const email = document.getElementById('email').value;
-const password = document.getElementById('password').value;
 
-//for the login button
+//for the login button.. sign na gois
 const submit = document.getElementById('submit');
 submit.addEventListener('click', function(event){
     event.preventDefault()
-    alert(5)
+
+    //inputs for email and pass
+const email = document.getElementById('email').value;
+const password = document.getElementById('password').value;
+
+    const auth = getAuth();
+signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    window.location.href= "dashboard.html";
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    alert(errorMessage)
+  });
 })
+
+
 
 
     // Walkthrough
