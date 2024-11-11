@@ -4,42 +4,43 @@ import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/fir
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCwkevD5GuyL-UH_J68stlb8-yETjjdNXg",
-  authDomain: "fir-e42bb.firebaseapp.com",
-  databaseURL: "https://fir-e42bb-default-rtdb.firebaseio.com",
-  projectId: "fir-e42bb",
-  storageBucket: "fir-e42bb.firebasestorage.app",
-  messagingSenderId: "1019133485649",
-  appId: "1:1019133485649:web:476f8eff007283efcc0e70"
-};
+    apiKey: "AIzaSyCwkevD5GuyL-UH_J68stlb8-yETjjdNXg",
+    authDomain: "fir-e42bb.firebaseapp.com",
+    databaseURL: "https://fir-e42bb-default-rtdb.firebaseio.com",
+    projectId: "fir-e42bb",
+    storageBucket: "fir-e42bb.firebasestorage.app",
+    messagingSenderId: "1019133485649",
+    appId: "1:1019133485649:web:476f8eff007283efcc0e70"
+  };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
 
 //for the login button.. sign na gois
-const submit = document.getElementById('submit');
-submit.addEventListener('click', function(event){
-    event.preventDefault()
+document.addEventListener('DOMContentLoaded', () => {
+    // Login Button Event Listener
+    const submit = document.getElementById('submit');
+    if (submit) {
+        submit.addEventListener('click', function(event) {
+            event.preventDefault();
 
-    //inputs for email and pass
-const email = document.getElementById('email').value;
-const password = document.getElementById('password').value;
+            // Inputs for email and password
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
 
-    const auth = getAuth();
-signInWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Signed in 
-    const user = userCredential.user;
-    window.location.href= "dashboard.html";
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    alert(errorMessage)
-  });
-})
-
+            const auth = getAuth();
+            signInWithEmailAndPassword(auth, email, password)
+              .then((userCredential) => {
+                const user = userCredential.user;
+                window.location.href = "dashboard.html";  // Redirect to dashboard
+              })
+              .catch((error) => {
+                const errorMessage = error.message;
+                alert(errorMessage);
+              });
+        });
+    }
 
 
 
@@ -78,3 +79,4 @@ signInWithEmailAndPassword(auth, email, password)
     showSlide(currentSlide);
     startSlideShow();
 
+});
