@@ -3,9 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>OptiFood Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-    
-</body>
-</html>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="img/logo.png" alt="OptiFood Logo">
+                <div class="logo-text">
+                    <h1>OptiFood</h1>
+                    <p class="sub-title">SMART KITCHEN MONITORING APPLICATION</p>
+                </div>
+            </div>
+
+    <nav class="nav-menu">
+        <a href="#" class="nav-item">
+            <i class="material-icons">dashboard</i>
+            <span>Dashboard</span>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="material-icons">people</i>
+            <span>Households</span>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="material-icons">trending_up</i>
+            <span>Household Activity</span>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="material-icons">inventory</i>
+            <span>Most Items</span>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="material-icons">bar_chart</i>
+            <span>Reports</span>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="material-icons">notifications</i>
+            <span>Notifications</span>
+        </a>
+    </nav>
+    <hr>
+    <div class="bottommenu">
+        <a href="#" class="nav-item">
+            <i class="material-icons">settings</i>
+            <span>Settings</span>
+        </a>
+        <a href="#" class="nav-item logout-button">
+            <i class="material-icons">logout</i>
+            <span>Logout</span>
+        </a>        
+    </div>
+</aside>
+
+
+        
+        <main class="main-content">
+           
+            <div class="maincontainer">
+                <div class="search-bar">
+                    <input type="search" placeholder="Search for something">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </div>
+        
+                <h1 class="titledash">Dashboard-Brgy. Bonuan Gueset</h1>
+        
+                <div class="metrics">
+                    <div class="metric-card">
+                        <h3>Total Household</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        <p>0</p>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Total Item</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l2-1.14"></path><path d="M16.5 9.4 7.55 4.24"></path></svg>
+                        <p>0</p>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Total Consumption</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                        <p>0</p>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Total Food Wasted</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                        <p>0</p>
+                    </div>
+                </div>
+        
+                <div class="charts">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3>Summary</h3>
+                            <select id="summaryPeriod">
+                                <option value="this-week">This Week</option>
+                                <option value="last-week">Last Week</option>
+                                <option value="this-month">This Month</option>
+                            </select>
+                        </div>
+                        <canvas id="summaryChart"></canvas>
+                    </div>
+                    <div class="chart-card">
+                        <h3>October 2024</h3>
+                        <div id="calendar"></div>
+                    </div>
+                </div>
+        
+                <div class="users-table">
+                    <div class="table-header">
+                        <h3>Household Users</h3>
+                        <select id="userMonth">
+                            <option value="october">October</option>
+                            <option value="november">November</option>
+                            <option value="december">December</option>
+                        </select>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Household</th>
+                                <th>Name</th>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Phone Number</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="userTableBody">
+                            <!-- Table rows will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="summary-container">
+                <div class="summary-header">
+                    <h3>Summary</h3>
+                    <select id="summaryPeriod">
+                        <option value="this-week">This Week</option>
+                        <option value="last-week">Last Week</option>
+                        <option value="this-month">This Month</option>
+                    </select>
+                </div>
+                <div class="chart-container">
+                    <div class="y-axis">
+                        <span>200</span>
+                        <span>160</span>
+                        <span>120</span>
+                        <span>80</span>
+                        <span>40</span>
+                        <span>0</span>
+                    </div>
+                    <div class="bar-chart" id="summaryBarChart">
+                        <!-- Bars will be populated by JavaScript -->
+                    </div>
+                </div>
+                <div class="chart-legend">
+                    <div class="legend-item">
+                        <span class="legend-dot active"></span>
+                        <span>Active</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot inactive"></span>
+                        <span>Inactive</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/app.js"></script>
+        <script src="js/dashboard.js"></script>
+    </body>
+    </html>

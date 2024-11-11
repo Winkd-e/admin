@@ -1,66 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Optifood Login Form</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <script type="module" src="firebaseauth.js"></script>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OptiFood - Sign In</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
 <body>
-
-    <!-- Main container -->
     <div class="container">
-        <!-- Walkthrough Section -->
-        <div class="walkthrough">
-            <div class="slides">
-                <div class="slide">
-                    <img src="slide1.jpg" alt="Manage your home stock and track your food with ease!">
-                    <h3>Manage Your Stock</h3>
-                    <p>Track your food with ease!</p>
+        <!-- Left Side -->
+        <div class="left-side">
+            <div class="illustration">
+                <div class="slides">
+                  <img src="img/slide1.jpg" alt="Manage your home stock and track your food with ease!" class="main-image">
+                    <h2>Manage your home stock and track your food with ease!!</h2>
+                    <p>With OptiFood, simplify your kitchen tasks, reduce waste, and make smarter meal choices for a healthier, happier home!</p>
                 </div>
-                <div class="slide">
-                    <img src="slide2.png" alt="Plan Your Meals and Save Time!">
-                    <h3>Plan Your Meals</h3>
-                    <p>Save time and stay organized!</p>
+
+                <div class="slides">
+                  <img src="img/slide2.png" alt="Manage your home stock and track your food with ease!" class="main-image">
+                  <h2>Plan Your Meals and Save Time!</h2>
+                  <p>Effortlessly create meal plans, reduce cooking time, and enjoy delicious home-cooked meals without the hassle. Make the most of your ingredients and reclaim your time in the kitchen!</p>
                 </div>
-                <div class="slide">
-                    <img src="slide3.png" alt="Keep Your Grocery List Organized and Up-to-Date!">
-                    <h3>Organize Your Grocery List</h3>
-                    <p>Stay up-to-date with your groceries!</p>
+
+                <div class="slides">
+                  <img src="img/slide3.png" alt="Manage your home stock and track your food with ease!" class="main-image">
+                  <h2>Keep Your Grocery List Organized and Up-to-Date!</h2>
+                  <p>Stay organized and ensure you never run out of essentials. Save money by avoiding unnecessary purchases and make your shopping experience simple and efficient!</p>
                 </div>
             </div>
-            <button class="prev" onclick="moveSlide(-1)">❮</button>
-            <button class="next" onclick="moveSlide(1)">❯</button>
+            
+            <div class="dots">
+                  <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
         </div>
 
-        <!-- Login Section -->
-        <div class="forms-container">
-            <div class="login">
-                <form action="#" id="loginform">
-                    <h2 class="title">Sign in</h2>
-                    <div class="input-field">
-                        <i class="fas fa-user"></i>
-                        <input type="text" id="email" placeholder="Username" required>
-                    </div>
-                    <div class="input-field">
-                        <i class="fas fa-lock"></i>
-                        <input type="password" id="password" placeholder="Password" required>
-                    </div>
+        <!-- Right Side -->
+        <div class="right-side">
+            <div class="logo">
+                <div class="logo-icon">
                     <div>
-                        <input type="submit" name="loginbtn" value="Login">
+                        <img viewBox="0 0 24 24" class="sidebarlogo" src="img/logo.png" alt="OptiFood Logo" />
+                            <path d="M3 5h18v1H3z M3 12h18v1H3z M3 19h18v1H3z" fill="currentColor"/>
                     </div>
+                </div>
+                <div class="logo-text">
+                    <h1>OptiFood</h1>
+                    <p>SMART KITCHEN MONITORING APPLICATION</p>
+                </div>
+            </div>
+
+            <div class="login-form">
+                <h2>Sign In</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="helloworld@optifood.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="********">
+                    </div>
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember">
+                        <label for="remember">Remember Me</label>
+                    </div>
+                    <button type="submit">Login</button>
                 </form>
             </div>
         </div>
     </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-    <script src="app.js"></script>
-    
-    
-
+    <script src="js/app.js"></script>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyCwkevD5GuyL-UH_J68stlb8-yETjjdNXg",
+          authDomain: "fir-e42bb.firebaseapp.com",
+          databaseURL: "https://fir-e42bb-default-rtdb.firebaseio.com",
+          projectId: "fir-e42bb",
+          storageBucket: "fir-e42bb.firebasestorage.app",
+          messagingSenderId: "1019133485649",
+          appId: "1:1019133485649:web:476f8eff007283efcc0e70"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+      </script>
 </body>
 </html>
- 
