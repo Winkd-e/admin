@@ -63,4 +63,4 @@ submit.addEventListener('click', function(event){
 
     showSlide(currentSlide);
     startSlideShow();
-});
+
